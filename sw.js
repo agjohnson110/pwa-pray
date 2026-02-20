@@ -5,12 +5,15 @@ const urlsToCache = [
     '/style.css',
     '/app.js',
     '/manifest.json',
+    '/ActOfContrition.html',
     '/ApostlesCreed.html',
     '/FatimaPrayer.html',
+    '/FinalRosaryPrayer.html',
     '/GloryBe.html',
     '/HailHolyQueen.html',
     '/HailMary.html',
     '/OurFather.html',
+    '/Rosary.html',
     '/StMichael.html'
 ];
 
