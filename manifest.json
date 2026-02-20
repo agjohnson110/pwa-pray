@@ -2,7 +2,7 @@
     "name": "Prayer App",
     "short_name": "PrayApp",
     "description": "A progressive web app for prayers",
-    "start_url": "/index.html",
+    "start_url": "/pwa-pray/index.html",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#007bff",
