@@ -1,3 +1,11 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #2b2b2b; /* dark gray background */
+    color: #eeeeee;
+}
+
 header {
     background-color: #2600ff;
     color: white;
@@ -20,6 +28,16 @@ h1 {
     font-size: 1rem;
 }
 
+.rosary-button {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
 main {
     padding: 1rem;
 }
@@ -32,28 +50,30 @@ main {
 
 .button {
     display: block;
-    background-color: #ff0000;
+    background-color: #ff3b30; /* iOS-style red */
     color: white;
     text-decoration: none;
-    padding: 1.5rem;
+    padding: 1rem; /* slightly shorter */
     text-align: center;
     border-radius: 8px;
     font-size: 1.2rem;
     font-weight: bold;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    transition: background-color 0.3s;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    transition: background-color 0.15s ease-in-out, transform 0.08s;
 }
 
 .button:hover {
-    background-color: #0056b3;
+    background-color: #e0332b;
 }
 
 .button:active {
-    background-color: #004085;
+    background-color: #bf2a23;
+    transform: translateY(1px);
 }
 
 .prayer-content {
-    background-color: white;
+    background-color: rgb(56, 55, 55);
+    color: white;
     padding: 1.5rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -64,8 +84,8 @@ main {
 /* Responsive design for mobile */
 @media (max-width: 768px) {
     .button {
-        font-size: 1.5rem;
-        padding: 2rem 1.5rem;
+        font-size: 1.3rem;
+        padding: 1.25rem 1rem;
     }
     .prayer-content {
         font-size: 1.3rem;
