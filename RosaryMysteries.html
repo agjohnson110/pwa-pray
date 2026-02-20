@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rosary Mysteries - Prayer App</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#ffffff">
+    <!-- iOS specific meta tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="Prayer App">
+    <link rel="apple-touch-icon" href="icon-192.png">
+</head>
+<body>
+    <header>
+        <h1>Mysteries</h1>
+        <a href="index.html" class="back-button">Home</a>
+        <a href="Rosary.html" class="rosary-button">Rosary</a>
+    </header>
+    <main>
+        <div class="prayer-content">
+            <p><b>Joyful Mysteries</b><br>
+            <i><small>Mondays, Saturdays, Advent & Christmas Sundays</small></i><br>
+            <a href="#" class="mystery-link" data-mystery="Annunciation">The Annunciation</a><br>
+            <a href="#" class="mystery-link" data-mystery="Visitation">The Visitation</a><br>
+            <a href="#" class="mystery-link" data-mystery="Nativity">The Nativity</a><br>
+            <a href="#" class="mystery-link" data-mystery="Presentation">The Presentation in the Temple</a><br>
+            <a href="#" class="mystery-link" data-mystery="Finding">The Finding in the Temple</a><br>
+            <br>
+            <b>Sorrowful Mysteries</b><br>
+            <i><small>Tuesdays, Fridays, and Lent Sundays</small></i><br>
+            <a href="#" class="mystery-link" data-mystery="Agony">The Agony in the Garden</a><br>
+            <a href="#" class="mystery-link" data-mystery="Scourging">The Scourging at the Pillar</a><br>
+            <a href="#" class="mystery-link" data-mystery="Crowning">The Crowning with Thorns</a><br>
+            <a href="#" class="mystery-link" data-mystery="Carrying">The Carrying of the Cross</a><br>
+            <a href="#" class="mystery-link" data-mystery="Crucifixion">The Crucifixion</a><br>
+            <br>
+            <b>Glorious Mysteries</b><br>
+            <i><small>Wednesdays, Other Sundays</small></i><br>
+            <a href="#" class="mystery-link" data-mystery="Resurrection">The Resurrection</a><br>
+            <a href="#" class="mystery-link" data-mystery="Ascension">The Ascension</a><br>
+            <a href="#" class="mystery-link" data-mystery="HolySpirit">The Coming of the Holy Spirit</a><br>
+            <a href="#" class="mystery-link" data-mystery="Assumption">The Assumption of Mary</a><br>
+            <a href="#" class="mystery-link" data-mystery="Coronation">The Coronation of Mary</a><br>
+            <br>
+            <b>Luminous Mysteries</b><br>
+            <i><small>Thursdays</small></i><br>
+            <a href="#" class="mystery-link" data-mystery="Baptism">The Baptism of Jesus</a><br>
+            <a href="#" class="mystery-link" data-mystery="Cana">The Wedding of Cana</a><br>
+            <a href="#" class="mystery-link" data-mystery="Proclamation">The Proclamation of the Kingdom of God</a><br>
+            <a href="#" class="mystery-link" data-mystery="Transfiguration">The Transfiguration</a><br>
+            <a href="#" class="mystery-link" data-mystery="Eucharist">The Institution of the Eucharist</a></p>
+        </div>
+    </main>
+
+    <!-- Mystery Modal -->
+    <div id="mysteryModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="mysteryTitle"></h2>
+            <p id="mysteryDescription"></p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script>
+        const mysteries = {
+            Annunciation: "The Angel Gabriel announces to Mary that she will conceive and bear a son, Jesus. This mystery celebrates Mary's acceptance of God's will.",
+            Visitation: "Mary visits her cousin Elizabeth and greets her with joy. Elizabeth recognizes Mary as the mother of the Lord. John the Baptist leaps in Elizabeth's womb.",
+            Nativity: "Jesus is born in Bethlehem. Mary gives birth to her son in a stable, and shepherds come to adore the newborn King.",
+            Presentation: "Mary and Joseph present the infant Jesus at the temple in Jerusalem. Simeon recognizes Jesus as the promised Messiah.",
+            Finding: "Jesus is found in the temple speaking with the teachers. Mary and Joseph had searched for him for three days, worried about his disappearance.",
+            Agony: "Jesus prays in anguish in the Garden of Gethsemane, knowing of his coming passion and death. He sweats blood as he accepts God's will.",
+            Scourging: "Jesus is stripped of his garments and brutally scourged at the pillar by Roman soldiers. He endures terrible suffering for our sins.",
+            Crowning: "Roman soldiers mockingly place a crown of thorns on Jesus' head and hail him as king. Jesus endures this humiliation and pain with patience.",
+            Carrying: "Jesus carries his heavy cross up the hill to Golgotha. He falls multiple times under the weight of the cross and meets his sorrowful mother.",
+            Crucifixion: "Jesus is crucified at Calvary. He suffers and dies on the cross for the salvation of all mankind, redeeming us through his sacrifice.",
+            Resurrection: "Jesus rises from the dead on the third day, conquering sin and death. The resurrection gives us hope of eternal life.",
+            Ascension: "Jesus ascends into heaven forty days after his resurrection, taking his place at the right hand of God the Father.",
+            HolySpirit: "The Holy Spirit descends upon the apostles at Pentecost in the form of tongues of fire, empowering them to preach the Gospel.",
+            Assumption: "Mary is assumed body and soul into heaven at the end of her earthly life, where she is crowned Queen of Heaven.",
+            Coronation: "Mary is crowned Queen of Heaven by Jesus. She intercedes for all humanity and shows us the way to her Son.",
+            Baptism: "Jesus is baptized by John the Baptist in the Jordan River. The Holy Spirit descends upon Jesus, and God the Father's voice is heard.",
+            Cana: "Jesus attends the wedding feast at Cana in Galilee. At Mary's request, he performs his first miracle by turning water into wine.",
+            Proclamation: "Jesus proclaims the good news of the Kingdom of God and calls his disciples to follow him and repent, for the kingdom is at hand.",
+            Transfiguration: "Jesus is transfigured on Mount Tabor, his appearance shining with divine glory. Elijah and Moses appear beside him, and God's voice is heard.",
+            Eucharist: "Jesus institutes the Eucharist at the Last Supper, giving his apostles his body and blood under the forms of bread and wine."
+        };
+
+        const modal = document.getElementById('mysteryModal');
+        const mysteryLinks = document.querySelectorAll('.mystery-link');
+        const closeBtn = document.querySelector('.close');
+
+        mysteryLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const mysteryKey = link.getAttribute('data-mystery');
+                document.getElementById('mysteryTitle').textContent = link.textContent;
+                document.getElementById('mysteryDescription').textContent = mysteries[mysteryKey];
+                modal.style.display = 'block';
+            });
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
