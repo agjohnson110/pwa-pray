@@ -14,6 +14,7 @@ const urlsToCache = [
     '/HailMary.html',
     '/OurFather.html',
     '/Rosary.html',
+    '/RosaryMysteries.html',
     '/StMichael.html'
 ];
 

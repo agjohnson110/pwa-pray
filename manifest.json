@@ -1,6 +1,6 @@
 {
     "name": "Prayer App",
-    "short_name": "PrayApp",
+    "short_name": "Pray",
     "description": "A progressive web app for prayers",
     "start_url": "/pwa-pray/index.html",
     "display": "standalone",
