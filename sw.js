@@ -1,21 +1,22 @@
-const CACHE_NAME = 'prayer-app-v1';
+const CACHE_NAME = 'prayer-app-v2';
 const urlsToCache = [
     '/',
-    '/index.html',
-    '/style.css',
-    '/app.js',
-    '/manifest.json',
     '/ActOfContrition.html',
     '/ApostlesCreed.html',
+    '/app.js',
+    '/DivineMercy.html',
     '/FatimaPrayer.html',
     '/FinalRosaryPrayer.html',
     '/GloryBe.html',
     '/HailHolyQueen.html',
     '/HailMary.html',
+    '/index.html',
+    '/manifest.json',
     '/OurFather.html',
     '/Rosary.html',
     '/RosaryMysteries.html',
-    '/StMichael.html'
+    '/StMichael.html',
+    '/style.css'
 ];
 
 self.addEventListener('install', event => {
